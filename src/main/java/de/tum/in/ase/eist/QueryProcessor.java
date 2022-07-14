@@ -24,7 +24,7 @@ public class QueryProcessor {
             }
 
             if(query.contains("largest")){
-                String[] k = query.split(":");
+                String[] k = query.split(": ");
                 String[] kk = k[1].substring(1).split(", ");
                 int tempoMax = -111;
                 int size = kk.length;
