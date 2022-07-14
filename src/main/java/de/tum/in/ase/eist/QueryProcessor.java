@@ -14,6 +14,28 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "Koray";
         } else { // TODO extend the programm here
+            if(query.contains("what is ")){
+                String[] k = query.split(" ");
+                int number1 = Integer.parseInt(k[2]);
+                int number2 = Integer.parseInt(k[4]);
+                String retval = "";
+                retval += (number1 + number2);
+                return retval;
+            }
+
+            if(query.contains("which of the following")){
+                String[] k = query.split(":");
+                String[] kk = k[1].substring(1).split(", ");
+                int tempoMax = -111;
+                int size = kk.length;
+                for(int kh =0 ; kh < size ; kh ++ ){
+                    int temp = Integer.parseInt(kk[kh]);
+                    if(temp > tempoMax)
+                        tempoMax = temp;
+                }
+                return "" + tempoMax;
+
+            }
             return "";
         }
     }
