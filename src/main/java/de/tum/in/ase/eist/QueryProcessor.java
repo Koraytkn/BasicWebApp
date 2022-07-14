@@ -14,7 +14,7 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "Koray";
         } else { // TODO extend the programm here
-            if(query.contains("what is ")){
+            if(query.contains("plus")){
                 String[] k = query.split(" ");
                 int number1 = Integer.parseInt(k[2]);
                 int number2 = Integer.parseInt(k[4]);
@@ -23,7 +23,7 @@ public class QueryProcessor {
                 return retval;
             }
 
-            if(query.contains("which of the following")){
+            if(query.contains("largest")){
                 String[] k = query.split(":");
                 String[] kk = k[1].substring(1).split(", ");
                 int tempoMax = -111;
@@ -35,6 +35,15 @@ public class QueryProcessor {
                 }
                 return "" + tempoMax;
 
+            }
+
+            if(query.contains("multiplied")){
+                String[] k = query.split(" ");
+                int number1 = Integer.parseInt(k[2]);
+                int number2 = Integer.parseInt(k[5]);
+                String retval = "";
+                retval += (number1 * number2);
+                return retval;
             }
             return "";
         }
